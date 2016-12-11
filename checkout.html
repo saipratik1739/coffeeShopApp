@@ -66,7 +66,8 @@
               alert('Your Payment is Completed. Thank you for your Business!');
               window.localStorage.removeItem('checkoutData');
               window.localStorage.removeItem('totalCheckoutPrice');
-              window.location.href = 'http://localhost:8081/coffeeShop'
+              var origin = window.location.origin; //"http://localhost:8081"
+              window.location.href = origin + '/coffeeShop';
            }
         }
        }
