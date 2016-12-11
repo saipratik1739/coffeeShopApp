@@ -1,0 +1,95 @@
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <title>coffee shop</title>
+        <meta charset="utf-8">
+        <link href="css/vendor/bootstrap/bootstrap-custom.css" rel="stylesheet" type="text/css" />
+        <link href="css/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/screen.css" rel="stylesheet" type="text/css" />
+        <script data-main="js/main.js?v=1.0" src="js/libs/require/require.js"></script>
+    </head>
+<body>
+  <nav class="navbar navbar-default mrgn1">
+    <div class="container-fluid">
+      <a class="navbar-brand font-color"> <i class="fa fa-coffee" aria-hidden="true"></i>  Coffee Shop</a>
+    </div>
+  </nav>
+  <div class="container" id="coffee-shop-menu">
+    <div class="col-sm-6 col-xs-6 col-sm-6 col-lg-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="font-color">Coffee Menu</h3>
+        </div>
+        <div class="panel-body">
+          <div  class="list-group-item" v-for="coffeeMenuItem in coffeeMenu">
+            <div class="menu-parent-container">
+              <img :src="coffeeMenuItem.imagePath" class="img-height"> </img>
+              <div class="menu-title font-lrg"> {{coffeeMenuItem.title}}
+              </div>
+              <span class="pull-right">
+                <button class="btn btn-xs btn-success font-small" @click="onClickAddToReviewOrder"
+                  :productId="coffeeMenuItem.productId">
+                  <i class="fa fa-plus-circle mrgnRt5"></i>
+                    <span> Add </span>
+                    <span class="font-lrg"> ${{coffeeMenuItem.totalPrice}} </span>
+                </button>
+              </span>
+              <div class="menu-desc"> {{coffeeMenuItem.desc}}</div>
+              <div class="panel-body mod-panel-clr">
+                <div class="font-small fnt-weight600"> Extras: </div>
+                <div class="list-group-item font-small" v-for="modData in coffeeMenuItem.modifiers">
+                 <label>
+                    <input class="chkbx" type="checkbox" :value="modData.modPrice"
+                      :productId="coffeeMenuItem.productId" @click="updateTotalMenuPrice"
+                      :modName="modData.modName" :modPrice="modData.modPrice"> {{modData.modName}}
+                    </input>
+                  </label>
+                  <span class="menu-title font-small fnt-weight600 pull-right">
+                    +${{modData.modPrice}}
+                  </span>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-xs-6 col-sm-6 col-lg-6" v-if="totalInReviewOrder > 0">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="font-color"> <span> Review Order </span> </h3>
+        </div>
+        <div class="panel-body">
+           <div class="list-group-item" v-for="orderReviewItems in reviewOrder">
+             <div class="review-order-parent-container">
+                <img :src="orderReviewItems.imagePath" class="review-img-height"> </img>
+                <div class="menu-title font-lrg">
+                  <span> {{orderReviewItems.title}} </span>
+                  <span class="pull-right review-del-btn">
+                    <button class="btn btn-xs btn-danger font-small" :productId="orderReviewItems.productId"
+                      @click="onClickDeleteOrderItem">
+                      <i class="fa fa-minus-circle mrgnRt5"></i>
+                        <span> Delete </span>
+                        <span class="font-lrg"> ${{orderReviewItems.totalPrice}} </span>
+                    </button>
+                  </span>
+                  </div>
+                <div class="review-order-desc"> {{orderReviewItems.addedModifierStr}}</div>
+             </div>
+           </div>
+        </div>
+      </div>
+      <div>
+        <span class="font-small">
+          <i class="fa fa-info-circle font-italic"> you cannot modify order at checkout page </i>
+          </span>
+        <button class="btn btn-primary pull-right font-small" @click="onClickCheckout">
+          <i class="fa fa-shopping-cart"></i>
+          Checkout <span class="font-lrg"> ${{ totalInReviewOrder }} </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

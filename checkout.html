@@ -1,0 +1,75 @@
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <title>coffee shop</title>
+        <meta charset="utf-8">
+        <link href="css/vendor/bootstrap/bootstrap-custom.css" rel="stylesheet" type="text/css" />
+        <link href="css/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/screen.css" rel="stylesheet" type="text/css" />
+        <script src="js/libs/vue/vue.js"></script>
+    </head>
+<body>
+  <nav class="navbar navbar-default mrgn1">
+    <div class="container-fluid">
+      <a class="navbar-brand font-color"> <i class="fa fa-coffee" aria-hidden="true"></i>  Coffee Shop</a>
+    </div>
+  </nav>
+  <div class="container" id="coffee-shop-checkout">
+    <div class="col-sm-6 col-xs-6 col-sm-6 col-lg-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="font-color">Checkout
+            <span style="float:right;"> Final Total - ${{totalCheckoutPrice}}</span>
+          </h3>
+        </div>
+
+        <div class="panel-body">
+           <div class="list-group-item" v-for="orderReviewItems in checkoutData">
+             <div class="review-order-parent-container">
+                <img :src="orderReviewItems.imagePath" class="review-img-height"> </img>
+                <div class="menu-title font-lrg">
+                  <span> {{orderReviewItems.title}} </span>
+                  <span class="pull-right review-del-btn">
+                      <span class="font-lrg"> ${{orderReviewItems.totalPrice}} </span>
+                  </span>
+                  </div>
+                <div class="review-order-desc"> {{orderReviewItems.addedModifierStr}}</div>
+             </div>
+           </div>
+        </div>
+      </div>
+      <button class="btn btn-primary pull-right font-small" @click="onClickPayment">
+          <i class="fa fa-shopping-cart"></i>
+          Pay <span class="font-lrg"> ${{ totalCheckoutPrice }} </span>
+      </button>
+    </div>
+  </div>
+</body>
+
+  <script type="text/javascript">
+      var checkoutData = [];
+      var totalCheckoutPrice = 0;
+      if(window.localStorage) {
+        checkoutData = JSON.parse(window.localStorage.getItem('checkoutData'));
+        totalCheckoutPrice = JSON.parse(window.localStorage.getItem('totalCheckoutPrice'));
+      }
+      var viewModel = new Vue({
+        el: '#coffee-shop-checkout',
+        data: {
+          checkoutData: checkoutData,
+          orderReviewItems: {title: '', imagePath:'', desc:''},
+          totalCheckoutPrice: totalCheckoutPrice
+       },
+       methods: {
+        onClickPayment: function(e) {
+           if (confirm('Are you sure you to process payment?')) {
+              alert('Your Payment is Completed. Thank you for your Business!');
+              window.localStorage.removeItem('checkoutData');
+              window.localStorage.removeItem('totalCheckoutPrice');
+              window.location.href = 'http://localhost:8081/coffeeShop'
+           }
+        }
+       }
+      });
+  </script>
+</html>

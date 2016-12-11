@@ -1,0 +1,61 @@
+Bootstrap Customization Log
+Last Updated: 10/16/2013 11:03:27 AM
+
+
+
+================= GENERAL INFO ===========================
+
+Bootstrap Overrides:		(See config.json)
+
+@font-size-base: 11px
+@line-height-base: 1.3636363636364
+
+
+@padding-base-vertical: 4px
+@padding-base-horizontal: 6px
+@padding-large-vertical: 8px
+@padding-large-horizontal: 8px 
+@padding-small-vertical: 2px 
+@padding-small-horizontal: 4px 
+
+@border-radius-base: 3px
+@border-radius-large: 6px
+@border-radius-small: 2px
+
+@nav-link-padding: 5px 7px
+
+@modal-inner-padding: 10px
+@modal-title-padding: 6px
+
+@pager-border-radius: 6px
+
+
+
+================= CURRENT VERSION ===========================
+
+Regenerate at: http://getbootstrap.com/customize/?id=cd1fd84ab4c2558549f8
+Config: https://gist.github.com/anonymous/cd1fd84ab4c2558549f8
+
+
+Additional Notes:
+
+Commented out the @font-face in bootstrap-custom (line 262), to prevent the 404 issue with fonts;
+new @font-face in _bootstrapOverride.scss
+
+Added overrides for changed font-icons in _bootstrapOverrid.scss, lines 67-78 
+
+
+================== PREVIOUS VERSIONS ========================
+
+Regenerate these at:
+http://getbootstrap.com/customize/?id=7009994 (first attempt, unused)
+http://getbootstrap.com/customize/?id=7012063 (current, see below for these changes)
+
+
+Additional Notes:
+
+Commented out the @font-face in bootstrap-custom (line 2136), to prevent the 404 issue with fonts;
+new @font-face in _bootstrapOverride.scss
+
+
+

@@ -1,0 +1,76 @@
+.form-control {
+  margin-bottom: 10px;
+}
+.btn-danger {
+  margin-top: 8px;
+}
+
+.font-color {
+  color:#8b3232 !important;
+}
+
+.mrgn1 {
+  margin: 1%;
+}
+
+.img-height {
+  height: 10%;
+}
+
+.menu-title {
+  display: inline;
+  color:#8b3232 !important;
+}
+
+.font-lrg {
+   font-size: large;
+}
+
+.menu-desc {
+  margin-left: 17%;
+  margin-top: -5%;
+  @extend .font-small;
+}
+
+.mrgnRt5 {
+  margin-right: 5px;
+}
+
+.font-small {
+  font-size: small;
+}
+
+.mod-panel-clr {
+  background-color: #f5f5f5;
+  padding: 5px;
+  margin: 5px;
+}
+
+.chkbx {
+  margin-right: 5px !important;
+  vertical-align: sub;
+}
+
+.fnt-weight600 {
+  font-weight: 600;
+}
+
+.review-img-height {
+  height: 5%;
+}
+
+.review-total {
+  color: green;
+}
+
+.review-order-desc {
+    margin-left: 9%;
+}
+
+.review-del-btn {
+  margin-top: -2%;
+}
+
+.font-italic {
+  font-style: italic;
+}

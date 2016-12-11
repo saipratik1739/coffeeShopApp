@@ -1,0 +1,94 @@
+/* line 1, ../sass/partials/_homePage.scss */
+.form-control {
+  margin-bottom: 10px;
+}
+
+/* line 4, ../sass/partials/_homePage.scss */
+.btn-danger {
+  margin-top: 8px;
+}
+
+/* line 8, ../sass/partials/_homePage.scss */
+.font-color {
+  color: #8b3232 !important;
+}
+
+/* line 12, ../sass/partials/_homePage.scss */
+.mrgn1 {
+  margin: 1%;
+}
+
+/* line 16, ../sass/partials/_homePage.scss */
+.img-height {
+  height: 10%;
+}
+
+/* line 20, ../sass/partials/_homePage.scss */
+.menu-title {
+  display: inline;
+  color: #8b3232 !important;
+}
+
+/* line 25, ../sass/partials/_homePage.scss */
+.font-lrg {
+  font-size: large;
+}
+
+/* line 29, ../sass/partials/_homePage.scss */
+.menu-desc {
+  margin-left: 17%;
+  margin-top: -5%;
+}
+
+/* line 35, ../sass/partials/_homePage.scss */
+.mrgnRt5 {
+  margin-right: 5px;
+}
+
+/* line 39, ../sass/partials/_homePage.scss */
+.font-small, .menu-desc {
+  font-size: small;
+}
+
+/* line 43, ../sass/partials/_homePage.scss */
+.mod-panel-clr {
+  background-color: #f5f5f5;
+  padding: 5px;
+  margin: 5px;
+}
+
+/* line 49, ../sass/partials/_homePage.scss */
+.chkbx {
+  margin-right: 5px !important;
+  vertical-align: sub;
+}
+
+/* line 54, ../sass/partials/_homePage.scss */
+.fnt-weight600 {
+  font-weight: 600;
+}
+
+/* line 58, ../sass/partials/_homePage.scss */
+.review-img-height {
+  height: 5%;
+}
+
+/* line 62, ../sass/partials/_homePage.scss */
+.review-total {
+  color: green;
+}
+
+/* line 66, ../sass/partials/_homePage.scss */
+.review-order-desc {
+  margin-left: 9%;
+}
+
+/* line 70, ../sass/partials/_homePage.scss */
+.review-del-btn {
+  margin-top: -2%;
+}
+
+/* line 74, ../sass/partials/_homePage.scss */
+.font-italic {
+  font-style: italic;
+}
