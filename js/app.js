@@ -98,7 +98,10 @@ define([
 			    		window.localStorage.setItem('checkoutData', JSON.stringify(this.reviewOrder));
 			    		window.localStorage.setItem('totalCheckoutPrice', JSON.stringify(this.totalInReviewOrder));
 			    	}
-					window.location.href = 'http://localhost:8081/coffeeShop/checkout.html'
+				var origin = window.location.origin; //"http://localhost:8081"
+			    	var pathName = window.location.pathname; //"/coffeeShop/"
+			    	var url = origin + pathName + 'checkout.html';
+			    	window.location.href = url;
 			    }
 			}
 		});
